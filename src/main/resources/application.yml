@@ -1,0 +1,44 @@
+server:
+  port: ${PORT:8080}
+spring:
+  application:
+    name: book-store
+
+
+  datasource:
+    url: ${POSTGRES_DB_URL:jdbc:postgresql://localhost:5432/book-db?createDatabaseIfNotExist=true}
+    username: ${POSTGRES_DB_USERNAME:postgres}
+    password: ${POSTGRES_DB_PASSWORD:secret}
+    driverClassName: org.postgresql.Driver
+#  datasource:
+#    url: jdbc:h2:mem:book-store
+#  h2:
+#    console:
+#      enabled: true
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+#    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: aqilzeka9@gmail.com
+    password: rbmlrquffprliihg
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+jwt:
+  secret: ${JWT_SECRET:my_powerful_secret_jwt_keymy_powerful_secret_jwt_keymy_powerful_secret_jwt_keymy_powerful_secret_jwt_keymy_powerful_secret_jwt_keymy_powerful_secret_jwt_key}
+  expired: ${JWT_EXPIRED:3600000}
+  authorities: ${JST_AUTHORITIES:roles}
+
+springdoc:
+  packagesToScan: controller
