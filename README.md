@@ -1,4 +1,4 @@
-- # Spring boot registration app (jwt, email)
+- # Spring boot book-storing app with registration (jwt, email)
 
 # Description
 ### STEP 0
